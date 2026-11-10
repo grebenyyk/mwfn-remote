@@ -1,0 +1,6 @@
+.session/
+renders/
+__pycache__/
+*.pyc
+mwfn.toml
+.DS_Store

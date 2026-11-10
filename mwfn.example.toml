@@ -1,0 +1,30 @@
+# mwfn-remote example config - copy to mwfn.toml and edit
+[multiwfn]
+path = "/path/to/Multiwfn"                 # your own Multiwfn executable
+settings_ini = "/path/to/settings.ini"     # Multiwfn settings (a copy is made;
+                                           # isilent/graphformat are overridden)
+
+[data]
+cube = "/path/to/density.cube"             # Gaussian cube (grid data)
+workdir = "/path/to/kit"                   # where the CPs files below live
+cps_all = "CPs_all.txt"                    # optional dot sets (Multiwfn
+cps_bonded = "CPs_bonded.txt"              # CPs.txt format); delete if unused
+
+[plane]
+atoms = [1, 2, 3]      # 1-based indices (cube order) defining the base plane
+margin = 1.0          # window = atom-triangle extent x margin (square window)
+# size_a = [16.0, 10.0]   # optional explicit window in Angstrom (w x h)
+
+[render]
+map_type = 6          # 1 color-filled, 2 contours, 6 gradient lines+contours
+grid = "300,300"
+bonds = true
+bond_color = 3        # blue
+angstrom = true
+label_bohr = 0.5      # atom-label/dot display reach (Bohr)
+
+[view]
+step_a = 0.25         # parallel plane step (Angstrom) for keys/buttons
+zoom_factor = 1.2     # per wheel notch
+spin_deg = 15.0       # per r/R
+tilt_deg = 5.0        # per t/T y/Y

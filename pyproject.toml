@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mwfn-remote"
+version = "0.1.0"
+description = "Unofficial remote-control GUI for Multiwfn plane maps"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = ["numpy", "matplotlib"]
+
+[project.optional-dependencies]
+toml10 = ["tomli"]            # only needed on Python 3.10 (3.11+ has tomllib)
+
+[project.scripts]
+mwfn-remote = "mwfn_remote.__main__:main"
+
+[tool.setuptools]
+packages = ["mwfn_remote"]
