@@ -6,27 +6,12 @@ mwfn-remote keeps one Multiwfn process alive with your cube loaded, and lets you
 steer the plotting plane interactively — every gesture re-renders through
 Multiwfn itself, so what you see is exactly what Multiwfn computes.
 
-```
-┌─────────────────────────────┬──────────────┐
-│                             │ CP dots      │
-│      rendered section       │  ○ none      │
-│      (Multiwfn output)      │  ○ all       │
-│                             │  ○ bonded    │
-│  drag = pan   wheel = zoom  │ Map type     │
-│  ⇧drag / ↑↓ = step plane    │  ... radios  │
-│  t/T y/Y = tilt   r/R = spin│ bonds □      │
-│                             │ label reach  │
-│                             │ zoom/tilt/pan│
-└─────────────────────────────┴──────────────┘
-```
-
 ## Why
 
 Multiwfn's plane maps (gradient lines + contours + critical-point dots) are the
-reference QTAIM section plots, but driving them means typing obscure menu codes
-in a terminal, one render at a time. mwfn-remote gives that loop a throttle:
-zoom, pan, tilt and parallel-step the section until it shows what you want, then
-save.
+reference QTAIM section plots, but driving them means typing menu codes
+in a terminal, one render at a time. With mwfn-remote you can zoom, pan, 
+tilt and parallel-step the section until it shows what you want.
 
 ## What it drives
 
@@ -43,7 +28,7 @@ save.
 | `s` | save PNG (auto-named with plane params) |
 | `Esc` | reset to the configured base plane |
 
-Typical render time is 5–10 s per step (unit-cell cube); the cube loads once
+Typical render time is 5–10 s per step (MOF unit-cell cube); the cube loads once
 per session. A session watchdog restarts Multiwfn silently if the menu
 dialogue ever desyncs.
 
